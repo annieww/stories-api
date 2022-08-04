@@ -5,23 +5,24 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
+# require 'faker'
 
 # Story.create(name: Faker::TvShows::GameOfThrones.character, text: Faker::TvShows::GameOfThrones.quote)
 # Comment.create(name: Faker::GreekPhilosophers.name, content: Faker::GreekPhilosophers.quote)
 
-5.times do
-  story = Story.new(
-    name: Faker::TvShows::GameOfThrones.character,
-    text: Faker::TvShows::GameOfThrones.quote
-  )
-  story.save
-end
+stories = [
+  { name: 'Mo', text: 'Hello World' },
+  { name: 'Fabien', text: 'Hello Python' },
+  { name: 'Brian', text: 'Hello JS' },
+  { name: 'Forrest', text: 'Hello Rails' }
+]
+Story.create(stories)
 
-5.times do
-  comment = Comment.new(
-    name: Faker::GreekPhilosophers.name,
-    content: Faker::GreekPhilosophers.quote
-  )
-  comment.save
-end
+
+# 5.times do
+#   comment = Comment.new(
+#     name: Faker::GreekPhilosophers.name,
+#     content: Faker::GreekPhilosophers.quote
+#   )
+#   comment.save
+# end
